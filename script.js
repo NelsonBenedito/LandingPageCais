@@ -1,5 +1,4 @@
 function start() {
-  console.log("Hello world! Jesus saves");
   showDropDownMenu();
 }
 

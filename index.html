@@ -42,6 +42,8 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- jQuery -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -49,6 +51,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Flickity  JS-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <!-- Flickity CSS-->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -140,7 +150,7 @@
     </div>
 
     <main class="main-container">
-      <div id="first-container" class="flex-container background-container">
+       <div id="first-container" class="flex-container background-container">
         <div class="content-container content-container-blur content-cover">
           <div class="badge-achievement">
             <i
@@ -336,6 +346,61 @@
         </div>
         <div class="grain-texture"></div>
       </div>
+      <div
+        class="carousel"
+        data-flickity='{"imagesLoaded": true, "autoPlay": true, "prevNextButtons": false }'
+      >
+        <div class="carousel-cell">
+          <img src="./assets/Wallan.svg" alt="imagem do sócio Wallan" />
+          <section class="partners-container">
+            <div class="partners-story">
+              <h3 class="partner-name">
+                <span class="arrow-partner-right">Wallan Fromholz</span>
+              </h3>
+              <p class="partners-story-content">
+                Após sua trajetória com mercado Agro, seguiu para o mercado
+                financeiro, trabalhando com Seguros, onde pode crescer
+                principalmente com seguros voltados para o meio Agro e
+                Logístico, levando assim ao desenvolvimento de uma vasta rede de
+                relacionamento com esses dois setores do mercado Capixaba.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="carousel-cell">
+          <img src="./assets/Eduardo.svg" alt="imagem do sócio Eduardo" />
+          <section class="partners-container">
+            <div class="partners-story">
+              <h3 class="partner-name">
+                <span class="arrow-partner-right">Eduardo Brandão</span>
+              </h3>
+              <p class="partners-story-content">
+                Ingressou no mercado de trabalho muito cedo e teve a oportunidade de
+                vivenciar um pouco de tudo: processos, rotinas e, principalmente, o
+                setor financeiro da companhia, com altas demandas e uma equipe
+                extremamente robusta para atender a todas as necessidades.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="carousel-cell">
+          <img src="./assets/Wellington.svg" alt="imagem do sócio Wellington" />
+          <section class="partners-container">
+            <div class="partners-story">
+              <h3 class="partner-name">
+                <span class="arrow-partner-right">Wellington Nunes</span>
+              </h3>
+              <p class="partners-story-content">
+                Administrador de Empresas, Especialista em Investimentos com
+                certificações CEA(Certificado de Especialista Anbima) e Planejador
+                Financeiro CFP® (Certified Financial Planner). Possui MBA em Gestão
+                Empresarial pela Fundação Getúlio Vargas. E mais de 30 anos de
+                experiência no mercado financeiro.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
       <div id="contact" class="contact">
         <div class="contact-container">
           <form id="contactForm" class="contact-form">
@@ -396,6 +461,7 @@
             </div>
           </form>
         </div>
+
         <div class="grain-texture"></div>
       </div>
       <div class="footer">
