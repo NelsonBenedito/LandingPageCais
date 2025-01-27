@@ -1,4 +1,6 @@
 function start() {
+  showMobileMenu();
+  checkDevice();
   showDropDownMenu();
 }
 
@@ -9,7 +11,7 @@ function clearInputs() {
   formEl.addEventListener("submit", (event) => {
     event.preventDefault();
     formEl.reset();
-    
+
     feedbackEl.style.filter = "opacity(1)";
     contentFeedback.style.filter = "opacity(1)";
     feedbackEl.style.height = "5rem";
@@ -22,10 +24,24 @@ function clearInputs() {
     }, 5000);
   });
 }
+const checkDevice = () => {
+  const userAgent = navigator.userAgent;
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i;
+
+  if (isMobile.test(userAgent)) {
+    console.log("Using mobile device");
+  } else {
+    console.log("Using desktop device");
+  }
+};
+const apiKeyInput = document.getElementById("apiKeyInput");
+
+
 function showDropDownMenu() {
   const dropBtn = document.getElementById("dropBtn");
   const dropDown = document.getElementById("dropDown");
   const dropDownContent = document.getElementById("dropDownContent");
+
   dropBtn.addEventListener("mouseenter", () => {
     dropDown.style.height = "14rem";
     dropDown.style.filter = "opacity(1)";
@@ -37,6 +53,14 @@ function showDropDownMenu() {
     dropDown.style.filter = "opacity(0)";
     dropDown.style.backdropFilter = "blur(0)";
     dropDownContent.style.filter = "opacity(0)";
+  });
+}
+function showMobileMenu() {
+  const mobileBtn = document.getElementById("mobileBtn");
+  const mobileMenuContent = document.getElementById("mobileMenuContent");
+
+  mobileBtn.addEventListener("click", () => {
+    mobileMenuContent.classList.toggle("active");
   });
 }
 start();

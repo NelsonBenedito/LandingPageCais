@@ -72,7 +72,8 @@ h6 {
 }
 @font-face {
   font-family: "galano_grotesquethin";
-  src: url("../fonts/galanogrotesquethin-webfont.woff2") format("woff2"),
+  src: url("../fonts/galanogrotesque/galanogrotesquethin-webfont.woff2")
+      format("woff2"),
     url("../fonts/galanogrotesquethin-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -80,14 +81,16 @@ h6 {
 
 @font-face {
   font-family: "galano_grotesqueregular";
-  src: url("../fonts/galanogrotesqueregular-webfont.woff2") format("woff2"),
+  src: url("../fonts/galanogrotesque/galanogrotesqueregular-webfont.woff2")
+      format("woff2"),
     url("../fonts/galanogrotesqueregular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "galano_grotesquebold";
-  src: url("../fonts/galanogrotesquebold-webfont.woff2") format("woff2"),
+  src: url("../fonts/galanogrotesque/galanogrotesquebold-webfont.woff2")
+      format("woff2"),
     url("../fonts/galanogrotesquebold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -95,7 +98,8 @@ h6 {
 
 @font-face {
   font-family: "galano_grotesquemedium";
-  src: url("../fonts/galanogrotesquemedium-webfont.woff2") format("woff2"),
+  src: url("../fonts/galanogrotesque/galanogrotesquemedium-webfont.woff2")
+      format("woff2"),
     url("../fonts/galanogrotesquemedium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -159,7 +163,7 @@ h6 {
   left: 0;
   top: 12.2rem;
   width: 100%;
-  background: #074a81e8;
+  background: #074a81e8 var(--grainFilterLg);
   transition: 0.8s;
   z-index: 100000;
   #dropDownContent {
@@ -266,6 +270,7 @@ h6 {
     justify-content: space-between;
     padding: 0rem 2rem 0rem 2rem;
     margin: 0rem 10rem 0rem 10rem;
+    transition: 0.3s;
 
     .nav-btn-container {
       display: flex;
@@ -362,7 +367,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   .background-container {
-    background-image: url(../assets/investAlt2Bg.webp);
+    background-image: url(../assets/images/investAlt2Bg.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -465,6 +470,9 @@ h6 {
         height: 50rem;
         z-index: 1000;
         box-shadow: #00183844 1px 1px 20px;
+        background-image: url("/assets/images/personalAdvise.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
         .right-img {
           position: relative;
         }
@@ -491,9 +499,9 @@ h6 {
         height: 50rem;
         z-index: 10000;
         box-shadow: #00183844 1px 1px 20px;
-        .left-img {
-          position: relative;
-        }
+        background-image: url("/assets/images/enterpriseAdvise.jpg") !important;
+        background-size: cover !important;
+        background-repeat: no-repeat;
       }
     }
     .right-content {
@@ -525,7 +533,7 @@ h6 {
     }
   }
   .grain-texture {
-    background-image: url(../assets/grainTexture.png);
+    background-image: url(../assets/textures/grainTexture.png);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -891,7 +899,88 @@ textarea {
 .flickity-button {
   display: none;
 }
-@media (max-width: 768px) {
+.mobile-nav-bar {
+  display: none;
+}
+@media (max-width: 900px) {
+  .nav-bar {
+    display: none;
+  }
+  .container-social-bar {
+    display: none;
+  }
+  .mobile-nav-bar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    background: var(--darkBlue) var(--grainFilterLg);
+    transition: 0.3s;
+
+    img {
+      width: 10rem;
+    }
+    .mobile-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem;
+      transition: 0.3s;
+      z-index: 1000;
+      .container-logos-mobile {
+        display: flex;
+        align-items: center;
+        .logo-cais {
+          padding-right: 2rem;
+          border-right: 0.1rem solid #f1f1f1;
+        }
+      }
+    }
+    .mobile-btn {
+      color: #f1f1f1;
+      z-index: 100000;
+      right: 0;
+      top: 5;
+    }
+    .mobile-menu-content {
+      display: flex;
+      width: 100%;
+      background: #074a81e8 var(--grainFilterLg);
+      transition: 0.3s;
+      height: 0rem;
+      top: 7.4rem;
+      left: 0;
+      position: absolute;
+      opacity: 0;
+      overflow: hidden;
+      .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        transition: 0.3s;
+        a {
+          color: var(--primaryText);
+          border-radius: 0.5rem;
+          padding: 0rem 1rem;
+          font-size: 1.8rem;
+          transition: 0.3s;
+        }
+        a:hover {
+          background: var(--darkBlue);
+        }
+      }
+    }
+  }
+
+  .active {
+    height: 200px !important;
+    opacity: 1 !important;
+    border-radius: 0rem 0rem 1rem 1rem;
+  }
   .flex-section {
     display: none !important;
     background: none;
@@ -987,33 +1076,52 @@ textarea {
   body {
     width: 100vw;
   }
-  .underlined{
+  .underlined {
     display: none;
   }
-  #first-container{
+  #first-container {
     width: 100%;
   }
-  #second-container{
+  #second-container {
     height: 160vh;
     padding: 2rem 0rem;
   }
-  #third-container{
+  #third-container {
     height: 170vh;
   }
   .main-container {
-    
     .flex-container {
       height: 100vh;
-      justify-content: flex-start;
+      justify-content: space-between !important;
 
       .content-container {
         flex-direction: column;
-        padding: 0rem 2rem;
-        .light-title{
+        /* padding: 0rem 2rem; */
+        height: 100%;
+
+        .light-title {
           font-size: 3.6rem;
           line-height: 3.2rem;
-          .text-highlight-shadow{
+          .text-highlight-shadow {
             left: 1.7rem;
+          }
+        }
+      }
+      .content-container-primary {
+        padding: 0rem 1rem;
+        margin: 0rem 1rem;
+        width: 100%;
+        height: 100%;
+        flex-direction: column-reverse;
+
+        .left-content {
+          width: 100% !important;
+          height: 100%;
+          /* padding: 1rem 0rem; */
+          align-items: flex-start;
+          .dark-title {
+            font-size: 3.6rem;
+            line-height: 3.2rem;
           }
         }
       }
@@ -1031,36 +1139,23 @@ textarea {
           }
         }
       }
-      .content-container-primary {
-        padding: 0rem 1rem;
-        margin: 0rem 1rem;
-        width: 100%;
-        flex-direction: column-reverse;
-        .left-content {
-          width: 100% !important;
-          padding: 1rem 0rem;
-          .dark-title {
-            font-size: 3.6rem;
-            line-height: 3.2rem;
-          }
-        }
-      }
     }
   }
-
+  .content-cover {
+    padding: 0rem 2rem !important;
+  }
   .container-social-bar {
-    flex-direction: column; /* Ajusta a barra social para vertical */
+    flex-direction: column;
     height: auto;
     padding: 1rem 0;
   }
-  .nav-bar {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
-  }
   .about-container {
     padding: 1rem 1rem 0rem 1rem !important;
+    .section-title {
+      font-size: 3.6rem !important;
+    }
   }
+  
   .contact-container {
     width: 100%;
     flex-direction: column;
@@ -1096,7 +1191,8 @@ textarea {
   .contact {
     padding: 0px;
     width: 100%;
-    padding-top: 15rem;
+    padding: 2rem 0rem;
+    height: 100%;
     .contact-title {
       font-size: 3.6rem;
       width: 100%;
