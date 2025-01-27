@@ -61,6 +61,7 @@ function showMobileMenu() {
 
   mobileBtn.addEventListener("click", () => {
     mobileMenuContent.classList.toggle("active");
+    mobileBtn.classList.toggle("close");
   });
 }
 start();
