@@ -948,11 +948,9 @@ textarea {
       background-image: url(../assets/icons/list.svg);
       background-repeat: no-repeat;
       background-size: cover;
-      transition: 0.3s;
     }
     .close {
       background-image: url(../assets/icons/x.svg);
-      transition: 0.3s;
     }
     .mobile-menu-content {
       display: flex;
@@ -987,7 +985,7 @@ textarea {
   }
 
   .active {
-    height: 200px !important;
+    height: 18rem !important;
     opacity: 1 !important;
     border-radius: 0rem 0rem 1rem 1rem;
   }
