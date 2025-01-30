@@ -2,16 +2,14 @@ function start() {
   showMobileMenu();
   checkDevice();
   showDropDownMenu();
+  submitToast();
 }
 
-function clearInputs() {
+async function submitToast() {
   const formEl = document.getElementById("contactForm");
   const feedbackEl = document.getElementById("submitResponse");
   const contentFeedback = document.getElementById("contentFeedback");
   formEl.addEventListener("submit", (event) => {
-    event.preventDefault();
-    formEl.reset();
-
     feedbackEl.style.filter = "opacity(1)";
     contentFeedback.style.filter = "opacity(1)";
     feedbackEl.style.height = "5rem";
@@ -21,6 +19,7 @@ function clearInputs() {
       feedbackEl.style.height = "0rem";
       contentFeedback.style.filter = "opacity(0)";
       feedbackEl.style.padding = "0rem";
+      formEl.reset();
     }, 5000);
   });
 }
@@ -34,8 +33,6 @@ const checkDevice = () => {
     console.log("Using desktop device");
   }
 };
-const apiKeyInput = document.getElementById("apiKeyInput");
-
 
 function showDropDownMenu() {
   const dropBtn = document.getElementById("dropBtn");

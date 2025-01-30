@@ -348,7 +348,13 @@
     </div>
     <div id="contact" class="contact">
       <div class="contact-container">
-        <form id="contactForm" class="contact-form">
+
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="contact-form">
+          <input type="hidden" name="access_key" value="CE261A9C-900E-4228-B8F9-775FB9753DF2">
+          <input type="hidden" name="redirect" value="https://caisinvestimentos.com.br/#contact">
+          <input type="hidden" name="subject" value="Um novo contato foi feito através do nosso site!">
+          <input type="hidden" name="from_name" value="Cais Investimentos Contato">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <div class="contact-frame">
             <span>
               <h4 class="contact-title">
@@ -356,7 +362,11 @@
               </h4>
               <h3 class="contact-subtitle">Santa Maria de Jetibá</h3>
               <div class="container-location">
-                <p class="contact-tel">27 <strong>99714-9473</strong></p>
+                <a href="https://wa.me/5527997149473">
+                  <p class="contact-tel">
+                    <i style="border-radius: 0.5rem; padding-right: 1rem;" class="fa-brands fa-whatsapp fa-lg"></i>
+                    27 <strong>99714-9473</strong></p>
+                </a>
                 <p class="contact-address">
                   Av. Frederico Grulke, N° 934 - Sala 102 - Centro, Santa
                   Maria de Jetibá - ES, 29645-000
@@ -365,13 +375,13 @@
             </span>
           </div>
           <div class="container-form">
-            <input placeholder="Nome*" required type="text" name="name" id="nameInput" />
+            <input placeholder="Nome*" type="text" name="name" id="nameInput" required />
 
-            <input placeholder="E-mail*" required type="email" name="email" id="emailInput" />
-            <input placeholder="Telefone*" required type="tel" name="phone" id="phoneInput" />
-            <textarea placeholder="Mensagem" name="" id="messageInput"></textarea>
+            <input placeholder="E-mail*" type="email" name="email" id="emailInput" required />
+            <input placeholder="Telefone*" type="tel" name="Phone Number" id="phoneInput " required />
+            <textarea placeholder="Mensagem" id="messageInput" name="message"></textarea>
 
-            <button onclick="clearInputs()" type="submit" class="button-send">
+            <button id="submitBtn" type="submit" class="button-send">
               Enviar
             </button>
             <span id="submitResponse" class="submit-feedback">
@@ -428,20 +438,7 @@
             </li>
           </ul>
         </div>
-        <div class="">
-          <h3>Políticas</h3>
-          <ul class="list-footer">
-            <a href="#">
-              <li>Política de Privacidade</li>
-            </a>
-            <a href="#">
-              <li>Termos de Uso</li>
-            </a>
-            <a href="#">
-              <li>Dúvidas Frequentes</li>
-            </a>
-          </ul>
-        </div>
+
         <div class="footer-contact">
           <h3>
             <i class="fa-solid fa-location-dot" style="color: #f1f1f1"></i>Santa Maria de Jetibá
