@@ -748,7 +748,7 @@ h6 {
       .container-location {
         display: flex;
         flex-direction: column;
-      }
+        }
       .contact-tel {
         display: flex;
         align-items: center;
