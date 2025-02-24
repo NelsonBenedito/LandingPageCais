@@ -380,7 +380,7 @@ h6 {
     position: relative;
     height: 50vh;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   .flex-container {
     display: flex;
